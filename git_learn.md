@@ -6,8 +6,8 @@
 
 ```c
 /*创建空目录*/
-$ mkdir doucment_name
-$ cd doucment_name
+$ mkdir 目录名
+$ cd 目录名
 $ pwd          /*显示当前目录位置*/
 
 $ git init     /*把这个目录变成Git可以管理的仓库*/  /*然后就回多一个.git的子目录，不要动*/
@@ -27,5 +27,18 @@ $ git reset --hard HEAD^  /*回退到上个版本，几个^就表示往上第几
     /*回退之后又想回到最新的版本*/
 $ git reset --hard 1094a(版本号，前几位即可)
 /*找不到版本号了*/  $ git reflog  /*查看每一次命令*/
+    
+    /*工作区就是目录下，修改完add到暂存区stage，再commit到分支master等*/
+    
+$ git checkout -- 文件名.后缀  /*撤销修改，回到最近一次add或commit的状态*/
+$ git reset HEAD 文件名.后缀  /*撤销暂存区的修改（unstage），重新放回工作区*/
+    
+    /*删除文件*/
+    1、先手动删除文件，或者使用 ($ rm 文件名.后缀) 删除
+    2、(git rm 文件名.后缀) 从版本库删除文件  /*git add 也可以*/
+    3、git commit 提交修改
+    
+    /*工作区文件误删恢复*/
+$ git checkout -- 文件名.后缀 
 ```
 
